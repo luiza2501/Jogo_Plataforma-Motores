@@ -5,7 +5,8 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     public float Speed;
-    private RigidbodY2D rig;
+    public float JumpForce;
+    private Rigidbody2D rig;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,8 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       Move();   
+       Move();  
+       Jump(); 
     }
 
     void Move()
@@ -29,7 +31,9 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if(Input.GetButtonDown("jump"))
         {
-
+            rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.impulse);
         }
     }
+
+    void OnCollisionEnter2D()
 }
