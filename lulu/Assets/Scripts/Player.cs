@@ -33,18 +33,18 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Jump()
     {
-        if(Input.GetButtonDown("jump") && !isJumping)
+        if(Input.GetButtonDown("Jump") )
         {
             if(!isJumping)
             {
-                rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.impulse);
+                rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
             }
             else
             {
                 if(doubleJump)
                 {
-                  rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.impulse);
+                  rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
                   doubleJump = false;  
                 }
             }
@@ -55,11 +55,12 @@ public class NewBehaviourScript : MonoBehaviour
     {
       if(collision.gameObject.layer == 8)
       {
-          isJumping = false
+          isJumping = false;
+          doubleJump = false;
       }
     }
 
-    void OncollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(Collision2D collision)
     {
       if(collision.gameObject.layer == 8)
       {

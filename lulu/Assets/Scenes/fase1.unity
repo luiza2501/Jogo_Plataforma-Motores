@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 508913120}
   - component: {fileID: 508913122}
   - component: {fileID: 508913121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Brackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14653,7 +14653,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 14.8
+  orthographic size: 13.63
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -16355,7 +16355,7 @@ GameObject:
   - component: {fileID: 1293876053}
   - component: {fileID: 1293876052}
   - component: {fileID: 1293876051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bricks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17849,6 +17849,7 @@ GameObject:
   - component: {fileID: 1580202170}
   - component: {fileID: 1580202173}
   - component: {fileID: 1580202174}
+  - component: {fileID: 1580202175}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -18008,6 +18009,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
+  JumpForce: 20
+  isJumping: 0
+  doubleJump: 0
+--- !u!95 &1580202175
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580202169}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ce3afe2461a58b4dab4c70dcd0e1970, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1812634589
 GameObject:
   m_ObjectHideFlags: 0
@@ -18018,7 +18043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1812634591}
   - component: {fileID: 1812634590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
