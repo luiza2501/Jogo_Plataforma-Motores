@@ -32,14 +32,21 @@ public class NewBehaviourScript : MonoBehaviour
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position +=movement * Time.deltaTime * Speed;
 
-        if(input.GetAxis("Horizontal") > 0f) 
+        if(Input.GetAxis("Horizontal") > 0f) 
         {
             anim.SetBool("walk", true);
+            transform.eulerAngles = new Vector3(0f,0f,0f);
         }
 
-        if(input.GetAxis("Horizontal") > 0f) 
+        if(Input.GetAxis("Horizontal") < 0f) 
         {
             anim.SetBool("walk", true);
+            transform.eulerAngles = new Vector3(0f,180f,0f);
+        }
+
+         if(Input.GetAxis("Horizontal") == 0f) 
+        {
+            anim.SetBool("walk", false);
         }
         
     }
@@ -52,6 +59,7 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
+               anim.SetBool("jump", true); 
             }
             else
             {
@@ -70,6 +78,7 @@ public class NewBehaviourScript : MonoBehaviour
       {
           isJumping = false;
           doubleJump = false;
+          anim.SetBool("jump", false);
       }
     }
 
