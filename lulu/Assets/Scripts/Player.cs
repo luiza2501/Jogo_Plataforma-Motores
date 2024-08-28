@@ -11,11 +11,13 @@ public class NewBehaviourScript : MonoBehaviour
     public bool doubleJump;
 
     private Rigidbody2D rig;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,17 @@ public class NewBehaviourScript : MonoBehaviour
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position +=movement * Time.deltaTime * Speed;
+
+        if(input.GetAxis("Horizontal") > 0f) 
+        {
+            anim.SetBool("walk", true);
+        }
+
+        if(input.GetAxis("Horizontal") > 0f) 
+        {
+            anim.SetBool("walk", true);
+        }
+        
     }
 
     void Jump()
