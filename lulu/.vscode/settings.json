@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "lulu.sln"
+    "dotnet.defaultSolution": "lulu.sln",
+    "dotnet.preferCSharpExtension": true
 }
