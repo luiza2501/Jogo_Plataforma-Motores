@@ -80,6 +80,11 @@ public class NewBehaviourScript : MonoBehaviour
           doubleJump = false;
           anim.SetBool("jump", false);
       }
+      if(collision.gameObject.tag == "spike")
+      {
+         GameController.instance.ShowGameOver();
+         Destroy(gameObject);
+      }
     }
 
     void OnCollisionExit2D(Collision2D collision)
